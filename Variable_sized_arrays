@@ -1,0 +1,39 @@
+# Ejercicio donde se piden dos números, r y q, generándose "r" arrays (o vectores) donde el primer número (el) indica la longitud del array 
+# y "n" sus elementos. Luego genera "q" cantidad de queries donde la query consiste en imprimir por pantalla el "numq" elemento del "rowq" array.
+
+
+
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    int r, q, el, n, numq, rowq;
+        
+    cin>>r>>q;
+    vector<vector<int>> nvec;
+    
+    for (int i = 0; i < r; i++){
+        cin>>el;
+        vector<int> elvec;
+        for (int j = 0; j < el; j++){
+            cin>>n;
+            elvec.push_back(n);
+        }
+        nvec.push_back(elvec);
+    }   
+    
+    for (int z = 0; z < q; z++){
+        cin>>numq>>rowq;
+        cout<<nvec[numq][rowq]<<endl;
+    }
+    return 0;
+}
